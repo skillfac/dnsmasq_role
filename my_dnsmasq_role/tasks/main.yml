@@ -1,0 +1,12 @@
+---
+# tasks file for my_dnsmasq_role
+- name: install dnsmasq
+  apt:
+    name: dnsmasq
+    state: present
+- name: copy template
+  copy:
+    src: templates/dnsmasq2.conf
+    dest: /etc/dnsmasq.d/dnsmasq.conf
+  notify: dnsmasqrestart
+        

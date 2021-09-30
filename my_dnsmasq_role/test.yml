@@ -1,0 +1,6 @@
+---
+- hosts: nana-test
+  become: yes
+  become_method: sudo
+  roles:
+    - my_dnsmasq_role
